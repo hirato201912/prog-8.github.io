@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>三河八橋駅前校</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-left">三河八橋駅前校</div>
+    <div class="header-right">
+      <ul>
+        <li>先生ログイン</li>
+        <li>メモ</li>
+        <li class="selected">本日の授業風景</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="contact-form">
+      <div class="form-title">授業レポート</div>
+      <form method="post" action="sent.php">
+        <div class="form-item">先生名</div>
+        <select name="teacher">
+          <option value="未選択">選択してください</option>
+          <option value="曽場尾">曽場尾</option>
+          <option value="酒井">酒井</option>
+          <option value="松井">松井</option>
+          <!-- for文を用いて6歳から100歳までをoptionで選べるようにしましょう -->
+          <?php 
+            
+          ?>
+        </select>
+
+
+        
+
+        <div class="form-item">生徒名</div>
+        <select name="age">
+          <option value="未選択">選択してください</option>
+          <option value="001 田中波音">001 田中波音</option>
+          <option value="002 内藤和希">002 内藤和希</option>
+          
+
+          <!-- for文を用いて6歳から100歳までをoptionで選べるようにしましょう -->
+          <?php 
+            
+          ?>
+        </select>
+
+        <div class="form-item">レポートの種類</div>
+        <?php 
+          $types = array('生徒の様子', '学校進度', '生徒との話題', '良かった点', 'テストの結果', 'その他');
+         ?>
+        <!-- この下にselectタグを書いていきましょう -->
+        <select name="category">
+           <option value="未選択">選択してください</option>
+             <?php
+            foreach ($types as $type) {
+      echo "<option value='{$type}'>{$type}</option>";} ?>
+        </select>
+
+        
+        <div class="form-item">内容</div>
+        <textarea name="body"></textarea>
+
+        <input type="submit" value="送信">
+      </form>
+    </div>
+  </div>
+  
+  
+  </div>
+</body>
+</html>
